@@ -85,6 +85,7 @@ const warriorsGames = [{
     }
   }
 ]
+
 const ulParent= document.createElement('ul');
 for (let game of warriorsGames) {
   // ul>>li(game)
@@ -96,18 +97,21 @@ for (let game of warriorsGames) {
   const {team:aTeam,points:aPoints}= awayTeam;
 
   const teamNames=`${hTeam}--${aTeam}`;
-  const scoreLine;console.log(scoreLine);
+  let scoreLine;console.log(scoreLine);
   gameLi.textContent=`${teamNames}--${scoreLine}`;
-  //comparing the winner 
-  if (hPoints>aPoints) {
+
+//get the points of each team
+  //comparing the winner
+    if (hPoints>aPoints) {
     scoreLine=`<b>${hPoints}</b>-- ${aPoints}` ;
-  }else{scoreLine=`${hPoints} -- <b>${aPoints}</b>` ;
+   }else{scoreLine=`${hPoints} -- <b>${aPoints}</b>` ;
  }
+
+//iterating only for the g;loden state and adding the class name 
+const warriors = hTeam ==='Golden State' ?? homeTeam : awayTeam;
+gameLi.classList.add(warriors.isWinner ? 'win' : 'lose');
   
   
   console.log(homeTeam.team,awayTeam.team);
 }
 document.body.append(ulParent);
-
-//get the points of each team 
-
