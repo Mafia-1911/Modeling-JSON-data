@@ -1,0 +1,8 @@
+.win {
+  backround-color: green ;
+  font-weight:bold;
+}
+.lose {
+  backround-color : red ;
+  font-weight:500;
+}
